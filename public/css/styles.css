@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+
+
+body{
+  background-color: #FCFCFC;
+  font-family: 'Lato', sans-serif;
+}
+
+input[type="text"]{
+  background-color: transparent;
+  cursor: inherit;
+  height: 100%;
+}
+
+input[type="text"]:focus {
+  /* background-color: transparent; */
+  cursor: text;
+  box-shadow: none;
+  outline: 0;
+  color: #656A80;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.content{
+  display: flex;
+  min-width: 1280px;
+  min-height: 800px;
+}
+
+/********* Lists List*********/
+.lists-container{
+  background-color: #FFFFFF;
+  color: #8990AD;
+  padding: 20px 10px;
+  filter: drop-shadow(0px 3px 26px rgba(0, 0, 0, 0.161));
+  width: 178px;
+}
+
+.lists-container:first-child{
+  margin-top: 0;
+}
+
+.lists-container:last-child{
+  margin-bottom: 0;
+}
+
+.list-instance{
+  color: #8990AD;
+  font-size: 15px;
+  margin: 5px 0;
+  padding: 5px 15px;
+  border-radius: 10px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.list-instance:hover{
+  color: #656A80;
+  background-color: #F7F7F7;
+}
+
+.list-instance a{
+  color: inherit;
+  cursor: inherit;
+  text-decoration: none;
+}
+
+.current-list{
+  filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.161));
+  background-color: #FFFFFF;
+  color: #495172;
+}
+
+::placeholder {
+  font-family: 'Lato', sans-serif;
+  color: #8990AD;
+  font-size: 15px;
+  font-weight: 400;
+}
+/********* Lists *********/
+
+/********* Current List *********/
+.current-list-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.current-list-content{
+  width: 450px;
+}
+
+.item-instance{
+  min-height:30px;
+  background: #fff;
+  border-radius: 10px;
+  filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.161));
+  padding: 5px 15px;
+  margin: 15px 0;
+}
+
+.item-instance.add-new{
+}
+/********* Current List End *********/
