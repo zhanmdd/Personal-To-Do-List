@@ -11,20 +11,22 @@ body{
   font-family: 'Lato', sans-serif;
 }
 
+input{
+  font-family: inherit;
+  font-size: inherit;
+  color: #656A80;
+  cursor: pointer;
+}
+
 input[type="text"]{
   background-color: transparent;
-  cursor: inherit;
   height: 100%;
 }
 
 input[type="text"]:focus {
-  /* background-color: transparent; */
   cursor: text;
   box-shadow: none;
   outline: 0;
-  color: #656A80;
-  font-family: inherit;
-  font-size: inherit;
 }
 
 .content{
@@ -48,16 +50,17 @@ input[type="text"]:focus {
 
 .lists-container:last-child{
   margin-bottom: 0;
+  background-color: #F7F7F7;
 }
 
 .list-instance{
   color: #8990AD;
   font-size: 15px;
   margin: 5px 0;
-  padding: 5px 15px;
   border-radius: 10px;
   font-weight: 400;
   cursor: pointer;
+  width: 100%;
 }
 
 .list-instance:hover{
@@ -77,6 +80,8 @@ input[type="text"]:focus {
   color: #495172;
 }
 
+
+
 ::placeholder {
   font-family: 'Lato', sans-serif;
   color: #8990AD;
@@ -87,6 +92,7 @@ input[type="text"]:focus {
 
 /********* Current List *********/
 .current-list-container{
+  color: #4D4D4D;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -98,7 +104,14 @@ input[type="text"]:focus {
   width: 450px;
 }
 
+.items{
+  margin-top: 14px;
+  border-top: solid 1px;
+  border-color: #707070;
+}
+
 .item-instance{
+
   min-height:30px;
   background: #fff;
   border-radius: 10px;
@@ -106,6 +119,40 @@ input[type="text"]:focus {
   padding: 5px 15px;
   margin: 15px 0;
 }
+
+.item-instance form{
+  display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.item-instance form input{
+  cursor: pointer;
+}
+
+.item-instance form input:checked+span{
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.item-instance form button{
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+.item-instance form button svg{
+  fill: #707070;
+}
+
+.item-instance form button:hover svg{
+  fill: #FF665C;
+}
+
+.item-instance form button:active{
+  opacity: 0.7;
+}
+
 
 .item-instance.add-new{
 }
