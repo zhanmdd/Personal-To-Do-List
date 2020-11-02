@@ -1,0 +1,43 @@
+<%-include("partials/header")%>
+
+<div class="lists-container">
+
+  <% lists.forEach(function(list){%>
+  <a href="/<%=list._id%>">
+    <div class="list-instance">
+      <%=list.name%>
+    </div>
+  </a>
+  <%  });%>
+  <div class="list-instance add-new">
+    <form class="" action="/" method="post">
+      <input type="text" name="newList" placeholder="+ Add a new list" autocomplete="off">
+    </form>
+  </div>
+</div>
+
+<div class="current-list-container">
+  <div class="welcome">
+    <h1>Welcome!</h1>
+    <h2>New List</h2>
+    <p>1. Click on the "+Add a new list"</p>
+    <p>2. Enter a new list name</p>
+    <p>3. Press "Enter"</p>
+    <h2>Existing List</h2>
+    <p>1. Open any existing list on the left bar</p>
+    <p>2. Add a new task: type the task name and press "Enter"</p>
+    <p>3. Delete the task: press click on <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13">
+        <path id="Icon_awesome-trash-alt" data-name="Icon awesome-trash-alt"
+          d="M.929,11.781A1.315,1.315,0,0,0,2.321,13h8.357a1.315,1.315,0,0,0,1.393-1.219V3.25H.929Zm7.893-6.5a.468.468,0,0,1,.929,0v5.687a.468.468,0,0,1-.929,0Zm-2.786,0a.468.468,0,0,1,.929,0v5.687a.468.468,0,0,1-.929,0Zm-2.786,0a.438.438,0,0,1,.464-.406.438.438,0,0,1,.464.406v5.687a.438.438,0,0,1-.464.406.438.438,0,0,1-.464-.406ZM12.536.812H9.054L8.781.338A.712.712,0,0,0,8.157,0H4.84a.7.7,0,0,0-.621.338L3.946.812H.464A.438.438,0,0,0,0,1.219v.812a.438.438,0,0,0,.464.406H12.536A.438.438,0,0,0,13,2.031V1.219A.438.438,0,0,0,12.536.812Z"
+          transform="translate(0 0)" fill="#707070" />
+      </svg>
+    </p>
+    <p>4. Delete the list: click on "Delete List" button at the bottom</p>
+  </div>
+
+
+
+
+</div>
+
+<%-include("partials/footer")%>

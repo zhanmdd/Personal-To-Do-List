@@ -1,6 +1,15 @@
-// $(".item-instance form .checkbox").click(function(e){
-//   $(this).css("background-image", "url('checkbox-checked.svg')");
-// })
+function delItem() {
+  if (confirm('Press "OK" if you want to delete the item')) {
+           $(".delete-item").submit();
+       } else {
+           return false;
+       }
+}
 
-//   background-image: url(checkbox-checked.svg)
-// .item-instance form span
+function delList() {
+  if (confirm('Press "OK" if you want to delete the list')) {
+           $(".delete-list").submit();
+       } else {
+           return false;
+       }
+}

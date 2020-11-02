@@ -1,37 +1,32 @@
 <%-include("partials/header")%>
 
 <div class="lists-container">
-
-  <% lists.forEach(function(list){%>
-  <div class="list-instance">
-    <a href="/<%=list.name%>"> <%=list.name%> </a>
-  </div>
-  <%  });%>
-  <div class="list-instance">
-    <form class="" action="/" method="post">
-      <input type="text" name="newList" placeholder="+ Add a new list">
-    </form>
-  </div>
+  <a class="back" href="/">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 34.875 34.875">
+  <path id="Icon_awesome-arrow-alt-circle-left" data-name="Icon awesome-arrow-alt-circle-left" d="M18,35.438A17.438,17.438,0,1,1,35.438,18,17.434,17.434,0,0,1,18,35.438Zm8.156-20.531H18V9.921a.844.844,0,0,0-1.441-.6L8.522,17.4a.836.836,0,0,0,0,1.188l8.037,8.079a.844.844,0,0,0,1.441-.6V21.094h8.156A.846.846,0,0,0,27,20.25v-4.5A.846.846,0,0,0,26.156,14.906Z" transform="translate(-0.563 -0.563)"/>
+</svg>
+<span>Main Page</span>
+  </a>
 </div>
 
 <div class="current-list-container">
   <div class="current-list-content">
-    <h1>Main List</h1>
+    <h1><%=currentListName%> </h1>
     <div class="items">
 
       <% items.forEach(function(item){%>
       <div class="item-instance">
-        <form class="" action="index.html" method="post">
+        <form class="delete-item" action="/deleteItem" method="post">
           <input type="checkbox"></input>
-          <span><%= item %></span>
-          <button type="submit" name="deleteItem">
+          <span><%= item.name %></span>
+          <input type="hidden" name="itemId" value="<%= item._id %>"></input>
+          <input type="hidden" name="listId" value="<%= listId %>"></input>
+          <button onclick="delItem()" type="button">
           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13">
             <path id="Icon_awesome-trash-alt" data-name="Icon awesome-trash-alt" d="M.929,11.781A1.315,1.315,0,0,0,2.321,13h8.357a1.315,1.315,0,0,0,1.393-1.219V3.25H.929Zm7.893-6.5a.468.468,0,0,1,.929,0v5.687a.468.468,0,0,1-.929,0Zm-2.786,0a.468.468,0,0,1,.929,0v5.687a.468.468,0,0,1-.929,0Zm-2.786,0a.438.438,0,0,1,.464-.406.438.438,0,0,1,.464.406v5.687a.438.438,0,0,1-.464.406.438.438,0,0,1-.464-.406ZM12.536.812H9.054L8.781.338A.712.712,0,0,0,8.157,0H4.84a.7.7,0,0,0-.621.338L3.946.812H.464A.438.438,0,0,0,0,1.219v.812a.438.438,0,0,0,.464.406H12.536A.438.438,0,0,0,13,2.031V1.219A.438.438,0,0,0,12.536.812Z" transform="translate(0 0)" fill=none/>
           </svg>
           </button>
         </form>
-
-
       </div>
       <%  });%>
 
@@ -48,14 +43,16 @@
         <input type="checkbox" name="" value="">
         Task 3
       </div> %>
-    </div>
-
-    <div class="">
-      <form class="item-instance add-new" action="/" method="post">
-        <input type="text" name="newItem" placeholder="+ Add a new task">
+      <form class="item-instance add-new" action="/<%= listId%>" method="post">
+        <input type="text" name="newItem" placeholder="+ Add a new task" autocomplete="off">
       </form>
     </div>
+    <form class="delete-list" action="deleteList" method="post">
+      <input type="hidden" name="listDeleteId" value="<%= listId %>">
+      <button class="btn-deleteList" onclick="delList()" type="button">Delete List</button>
+    </form>
   </div>
+
 </div>
 
 <%-include("partials/footer")%>

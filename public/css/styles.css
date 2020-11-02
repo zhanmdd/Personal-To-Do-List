@@ -9,18 +9,20 @@
 body{
   background-color: #FCFCFC;
   font-family: 'Lato', sans-serif;
+  height: 100vh;
 }
 
 input{
   font-family: inherit;
   font-size: inherit;
   color: #656A80;
-  cursor: pointer;
 }
 
 input[type="text"]{
   background-color: transparent;
   height: 100%;
+  width: 100%;
+  padding: 5px 15px;
 }
 
 input[type="text"]:focus {
@@ -31,8 +33,7 @@ input[type="text"]:focus {
 
 .content{
   display: flex;
-  min-width: 1280px;
-  min-height: 800px;
+  height: 100%;
 }
 
 /********* Lists List*********/
@@ -56,6 +57,7 @@ input[type="text"]:focus {
 .list-instance{
   color: #8990AD;
   font-size: 15px;
+  padding: 5px 15px;
   margin: 5px 0;
   border-radius: 10px;
   font-weight: 400;
@@ -63,34 +65,69 @@ input[type="text"]:focus {
   width: 100%;
 }
 
-.list-instance:hover{
-  color: #656A80;
-  background-color: #F7F7F7;
-}
 
-.list-instance a{
+a{
   color: inherit;
   cursor: inherit;
   text-decoration: none;
 }
 
-.current-list{
-  filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.161));
-  background-color: #FFFFFF;
-  color: #495172;
+.list-instance:hover{
+  color: #656A80;
+  background-color: #EDEDED;
 }
-
-
 
 ::placeholder {
   font-family: 'Lato', sans-serif;
-  color: #8990AD;
+  color: #D4D4D4;
   font-size: 15px;
   font-weight: 400;
+}
+
+.btn-deleteList{
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  background-color: #FFF;
+  color: #FF665C;
+  padding: 5px 10px;
+  border-radius: 10px;
+  filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.161));
+}
+
+.btn-deleteList:hover{
+  background-color: #F7F7F7;
+}
+
+.btn-deleteList:active{
+  outline: 0;
+  opacity: 0.7;
 }
 /********* Lists *********/
 
 /********* Current List *********/
+.back{
+  display: flex;
+  cursor: pointer;
+}
+
+.back svg{
+  fill: #8990AD;
+  margin-right: 10px;
+}
+
+.back:hover svg, .back:hover span{
+  fill: #495172;
+  color: #495172;
+}
+
+.back:active svg, .back:active span{
+  opacity: 0.5;
+  fill: #495172;
+  color: #495172;
+}
+
+
 .current-list-container{
   color: #4D4D4D;
   display: flex;
@@ -105,13 +142,13 @@ input[type="text"]:focus {
 }
 
 .items{
-  margin-top: 14px;
+  margin: 14px 0;
   border-top: solid 1px;
+  border-bottom: solid 1px;
   border-color: #707070;
 }
 
 .item-instance{
-
   min-height:30px;
   background: #fff;
   border-radius: 10px;
@@ -124,15 +161,6 @@ input[type="text"]:focus {
   display: flex;
 justify-content: space-between;
 align-items: center;
-}
-
-.item-instance form input{
-  cursor: pointer;
-}
-
-.item-instance form input:checked+span{
-  text-decoration: line-through;
-  opacity: 0.5;
 }
 
 .item-instance form button{
@@ -153,7 +181,52 @@ align-items: center;
   opacity: 0.7;
 }
 
-
-.item-instance.add-new{
+.item-instance input[type='checkbox']:checked+span{
+  text-decoration: line-through;
+  opacity: 0.7;
 }
+
+.add-new{
+  padding: 0;
+  background-color: #fff;
+  filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.161));
+}
+
+.add-new:hover{
+  background-color: #fff;
+}
+
+.welcome h1{
+  text-align: center;
+  margin: 20px 0;
+}
+
+.welcome h2{
+  margin-top: 30px;
+}
+
+.welcome p{
+  margin: 10px 0;
+}
+
 /********* Current List End *********/
+
+@media screen and (max-width: 768px) {
+  body{
+    font-size: 18px;
+  }
+  .current-list-content{
+    width: 90%;
+  }
+}
+
+footer{
+  color: #495172;
+  text-align: center;
+}
+
+footer a{
+  color:#656A80;
+  cursor: pointer;
+  text-decoration: underline;
+}
